@@ -1,0 +1,10 @@
+### Starting build.
+# Target: lab1.ml.depends, tags: { extension:ml, file:lab1.ml, ocaml, ocamldep, quiet }
+/soft/ocaml-4.01.0/linux_x86_64/bin/ocamldep.opt -modules lab1.ml > lab1.ml.depends
+# Target: lab1.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:lab1.cmo, file:lab1.ml, implem, ocaml, quiet }
+/soft/ocaml-4.01.0/linux_x86_64/bin/ocamlc.opt -c -o lab1.cmo lab1.ml
+# Target: lab1.cmx, tags: { compile, extension:cmx, extension:ml, file:lab1.cmx, file:lab1.ml, implem, native, ocaml, quiet }
+/soft/ocaml-4.01.0/linux_x86_64/bin/ocamlopt.opt -c -o lab1.cmx lab1.ml
+# Target: lab1.native, tags: { dont_link_with, extension:native, file:lab1.native, link, native, ocaml, program, quiet }
+/soft/ocaml-4.01.0/linux_x86_64/bin/ocamlopt.opt lab1.cmx -o lab1.native
+# Compilation successful.

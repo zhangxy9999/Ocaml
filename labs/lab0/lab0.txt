@@ -1,0 +1,1 @@
+It will result in stack overflow.

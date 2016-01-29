@@ -1,0 +1,14 @@
+type number = Int of int| Float of float
+
+let to_int n = match n with
+  |Int -> n
+  |_ -> None
+
+let to_float n = match n with
+  |Float -> n
+  | _ -> None
+
+let float_of_number n = match n with
+  |Float -> n
+  |Int -> float_of_int n
+  |_ -> None

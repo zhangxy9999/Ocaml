@@ -1,0 +1,5 @@
+"Rule: ocaml: ml -> cmo & cmi (%=lab1 )": "\006\233t/\133\024l\254\021\1335\168X\140 %"
+"Rule: ocaml dependencies ml (%=lab1 )": "\164PF\214x7\171\192\225\0283\164\137x\187`"
+"Rule: ocaml: ml & cmi -> cmx & o (%=lab1 )": "\017C.\154!\238v\198:u\171\213\250!&\219"
+"Rule: ocaml: cmx* & o* -> native (%=lab1 )": ">\148\225\170\1581QpJ\031u!\144\0014\202"
+"Resource: /home/zhan2223/csci2041/repo-41/lab1/lab1.ml": "M\145\169\198\169\005.\181\253\208\020\012\133sV\216"
