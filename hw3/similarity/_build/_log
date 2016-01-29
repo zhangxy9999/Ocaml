@@ -1,0 +1,16 @@
+### Starting build.
+# Target: similar.ml.depends, tags: { extension:ml, file:similar.ml, ocaml, ocamldep, quiet }
+/soft/ocaml-4.01.0/linux_x86_64/bin/ocamldep.opt -modules similar.ml > similar.ml.depends
+# Target: stemmer.ml.depends, tags: { extension:ml, file:stemmer.ml, ocaml, ocamldep, quiet }
+/soft/ocaml-4.01.0/linux_x86_64/bin/ocamldep.opt -modules stemmer.ml > stemmer.ml.depends # cached
+# Target: stemmer.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:stemmer.cmo, file:stemmer.ml, implem, ocaml, quiet }
+/soft/ocaml-4.01.0/linux_x86_64/bin/ocamlc.opt -c -o stemmer.cmo stemmer.ml # cached
+# Target: similar.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:similar.cmo, file:similar.ml, implem, ocaml, quiet }
+/soft/ocaml-4.01.0/linux_x86_64/bin/ocamlc.opt -c -o similar.cmo similar.ml
+# Target: stemmer.cmx, tags: { compile, extension:cmx, extension:ml, file:stemmer.cmx, file:stemmer.ml, implem, native, ocaml, quiet }
+/soft/ocaml-4.01.0/linux_x86_64/bin/ocamlopt.opt -c -o stemmer.cmx stemmer.ml # cached
+# Target: similar.cmx, tags: { compile, extension:cmx, extension:ml, file:similar.cmx, file:similar.ml, implem, native, ocaml, quiet }
+/soft/ocaml-4.01.0/linux_x86_64/bin/ocamlopt.opt -c -o similar.cmx similar.ml
+# Target: similar.native, tags: { dont_link_with, extension:native, file:similar.native, link, native, ocaml, program, quiet }
+/soft/ocaml-4.01.0/linux_x86_64/bin/ocamlopt.opt str.cmxa stemmer.cmx similar.cmx -o similar.native
+# Compilation successful.

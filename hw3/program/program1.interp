@@ -1,0 +1,13 @@
+#!./interpreter.native
+(let gcd (fun a:int (fun b : int 
+            (let q (/ a b)
+            (let r (- a (* q b))
+                   (seq (while (not (= r 0))
+                               (seq (set a b)
+                                    (set b r)
+                                    (set q (/ a b))
+                                    (set r (- a (* q b)))))
+                         b)))))
+(let m readint 
+(let n readint
+(print (app (app gcd m) n)))))

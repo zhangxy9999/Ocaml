@@ -1,0 +1,9 @@
+#!./interpreter.native
+(let mod (fun a:int (fun b:int 
+           (let q (/ a b)
+                (- a (* q b)))))
+(let i 0
+     (while (< i 461168601842738790)
+            (seq 
+                 (if (= (app (app mod i) 77) 0) (print i) (seq))
+                 (set i (+ i 1))))))

@@ -1,0 +1,16 @@
+### Starting build.
+# Target: interpreter.ml.depends, tags: { extension:ml, file:interpreter.ml, ocaml, ocamldep, quiet }
+/usr/local/bin/ocamldep.opt -modules interpreter.ml > interpreter.ml.depends
+# Target: program.ml.depends, tags: { extension:ml, file:program.ml, ocaml, ocamldep, quiet }
+/usr/local/bin/ocamldep.opt -modules program.ml > program.ml.depends # cached
+# Target: program.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:program.cmo, file:program.ml, implem, ocaml, quiet }
+/usr/local/bin/ocamlc.opt -c -o program.cmo program.ml # cached
+# Target: interpreter.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:interpreter.cmo, file:interpreter.ml, implem, ocaml, quiet }
+/usr/local/bin/ocamlc.opt -c -o interpreter.cmo interpreter.ml
+# Target: program.cmx, tags: { compile, extension:cmx, extension:ml, file:program.cmx, file:program.ml, implem, native, ocaml, quiet }
+/usr/local/bin/ocamlopt.opt -c -o program.cmx program.ml # cached
+# Target: interpreter.cmx, tags: { compile, extension:cmx, extension:ml, file:interpreter.cmx, file:interpreter.ml, implem, native, ocaml, quiet }
+/usr/local/bin/ocamlopt.opt -c -o interpreter.cmx interpreter.ml
+# Target: interpreter.native, tags: { dont_link_with, extension:native, file:interpreter.native, link, native, ocaml, program, quiet }
+/usr/local/bin/ocamlopt.opt str.cmxa program.cmx interpreter.cmx -o interpreter.native
+# Compilation successful.
